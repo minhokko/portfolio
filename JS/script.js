@@ -1,4 +1,4 @@
-// Turns the menu hamburguer into a X
+/* MENU HAMBURGUER*/
 
 const menuHamburguer = document.querySelector(".menu-hamburguer");
 menuHamburguer.addEventListener("click", () => {
@@ -18,7 +18,9 @@ function toggleMenu() {
 
 const items = document.querySelectorAll(".contact-item");
 
-/* Contato */
+/* MENU HAMBURGUER*/
+
+/* ANIMAÇÃO CONTATO */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -33,4 +35,39 @@ items.forEach(item => {
     item.style.transform = "translateY(20px)";
     observer.observe(item);
 });
-/* Contato */
+/* ANIMAÇÃO CONTATO */
+
+/*ANIMAÇÃO ENTRANDO NA TELA PELA LATERAL */
+const myObserver = new IntersectionObserver ( (entries) => {
+    entries.forEach( (entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show')
+        } else {
+            entry.target.classList.remove('show')
+        }
+    })
+})
+
+const elements = document.querySelectorAll('.hidden')
+
+elements.forEach ( (element) => myObserver.observe(element))
+
+/*ANIMAÇÃO ENTRANDO NA TELA PELA LATERAL */
+
+/* ANIMAÇÃO DE FOSCO E PARA O NORMAL */
+
+const observar = new IntersectionObserver ( (entries) => {
+    entries.forEach( (entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('mostra')
+        } else {
+            entry.target.classList.remove('mostra')
+        }
+    })
+})
+
+const elemento = document.querySelectorAll('.escondido')
+
+elemento.forEach ( (elemento) => observar.observe(elemento))
+
+/* ANIMAÇÃO DE FOSCO E PARA O NORMAL */

@@ -131,7 +131,8 @@ span {
   align-items: center;
 }
 
-.home-img {
+.home-img
+ {
   position: relative;
   animation: flutuar 2s ease-in-out infinite alternate;
 }
@@ -154,6 +155,37 @@ span {
 .about-img img {
   width: 100%;
 }
+
+/* IMAGEM CERTIFICAÇÃO */
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* ocupa a altura da tela */
+}
+
+.container-img img {
+  max-width: 100%;
+  width: 800px; /* ajuste se quiser */
+  height: auto;
+  animation: flutuar 4s ease-in-out infinite;
+}
+
+/* Animação de flutuação */
+@keyframes flutuar {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* IMAGEM CERTIFICAÇÃO */
 
 .about {
   background-color: var(--bg-colr-02);
@@ -695,8 +727,6 @@ footer {
 
 /*ANIMAÇÃO TEXTO DIGITALIZAÇÃO*/
 
-
-
 .home-content h1 span{
     display: block;
     color: var(--main-color);
@@ -734,3 +764,58 @@ footer {
         width: 0;
     }
 }
+
+/*ANIMAÇÃO TEXTO DIGITALIZAÇÃO*/
+
+/*ANIMAÇÃO ENTRANDO NA TELA PELA LATERAL */
+
+.hidden {
+    opacity: 0;
+    filter: blur(25px);
+    transform: translateX(-100%);
+    transition: all 2s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s;
+}
+
+/*ENTRANDO UM ATRAS DO OUTRO ATRASO DAS IMAGENS*/
+
+.logos :nth-child(2){
+    transition-delay: 100ms;
+}
+
+.logos :nth-child(3){
+    transition-delay: 300ms;
+}
+
+.logos :nth-child(4){
+    transition-delay: 500ms;
+}
+
+.logos :nth-child(5){
+    transition-delay: 700ms;
+}
+/*ANIMAÇÃO ENTRANDO NA TELA PELA LATERAL */
+
+
+/* ANIMAÇÃO DE FOSCO E PARA O NORMAL */
+
+.escondido {
+    opacity: 0;
+    filter: blur(30px);
+    transition: all 2s;
+}
+
+.mostra {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s;
+}
+
+/* ANIMAÇÃO DE FOSCO E PARA O NORMAL */
